@@ -1,0 +1,38 @@
+.login, .logout{
+    font-size: 18px;
+    width: 160px;
+    height: 48px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    background: #0081ff;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    width: 320px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rbottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.login a, .logout a{
+    font-size: 30px;
+    text-decoration: none;
+}
+.login a{
+    color: #203d14;
+}
+.logout{
+    background-color: red;
+}
+.logout a{
+    color: white;
+}

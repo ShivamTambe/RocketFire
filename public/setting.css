@@ -1,0 +1,124 @@
+.settings{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 50px;
+}
+.setting{
+    display: flex;
+    justify-content: space-around;
+}
+.input{
+    display: block;
+    width: 50%;
+    height: 38px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 10px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.settingtitle{
+    font-family: cursive;
+    font-size: 30px;
+}
+.submit{
+    height: 52px;
+    text-align: center;
+    line-height: 44px;
+    background: #0081ff;
+    font-size: 20px;
+    color: #fff;
+    width: 145px;
+    border: 0;
+    border-radius: 5px;
+}
+.settingsubmit{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-right: 50px;
+}
+.submit:hover{
+    cursor: pointer;
+}
+
+.cancle{
+    width: 132px;
+    color: #8d8d93;
+    font-size: 14px;
+    margin: 20px auto;
+}
+.cancelapp{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+
+    background-color: #1c1c1f;
+    color: white;
+    border: 1px solid #34343a;
+    border-radius: 8px;
+    z-index: 10;
+}
+.cancelbtns{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+.cancelbtn{
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    background: #0081ff;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+.canceldiv{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.8);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.cancelbtns a{
+    width: 100%;
+}
+.cancle:hover{
+    cursor: pointer;
+}
+.sec1imgg {
+    z-index: -5;
+}
+button{
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    background: #0081ff;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+.confirmm{
+    font-size: 18px;
+    width: 160px;
+    height: 48px;
+}
+.cno{
+    background-color: red;
+}
+.confirm{
+    background-color: red;
+}
