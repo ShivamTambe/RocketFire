@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=DynaPuff:wght@500&family=Indie+Flower&family=Playfair+Display:wght@600&family=Quicksand&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    max-width: 1064px;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 20px;
+}
+.ltop{
+    background-color: #020314;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 200px;
+    position: fixed;
+}
+.lbottom{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #020314;
+    color: #fff;
+    padding: 20px;
+    height: 78vh;
+}
+.profiles{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    gap: 5px;
+}
+
+.lbtns{
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    background: #0081ff;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    gap: 20px;
+    margin-left: 220px;
+}
+.rtop{
+    display: flex;
+    justify-content: space-between;
+    background-color: #020314;
+    color: #fff;
+}
+.rtopl{
+    margin-left: 20px;
+}
+.rtopr{
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    margin-right: 60px;
+    text-align: center;
+    justify-content: center;
+}
+.rmiddle{
+    background-color: #020314;
+}
+.rbtop{
+    display: flex;
+    gap: 50px;
+    margin-top: 20px;
+}
+.rbtopl{
+    margin-left: 20px;
+}
+.rbtopr{
+    display: flex;
+}
+.individual{
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    background: #0081ff;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    width: 150px;
+    margin-right: 20px;
+}
+.team{
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    background: #0081ff;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    width: 150px;
+}
+.profile img{
+    width: 200px;
+    border-radius: 100%;
+    width: 151px;
+    border: 2px solid black;
+}
+.rbtopl{
+    font-size: 30px;
+}
+.rbottom{
+    background-color: #020314;
+    color: #fff;
+}
+.rbottombtm{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+.ranks, .names, .stackids, .points{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.nametitle, .idtitle, .pointstitle, .rank{
+    color: yellow;
+    font-family: 'Indie Flower', cursive;
+    font-size:30px ;
+}
+.nos, .name,.id,.point{
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+}
+.lbtns a{
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+}

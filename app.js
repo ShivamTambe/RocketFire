@@ -12,7 +12,13 @@ app.use(bodyparser.urlencoded({extended:false}))
 
 
 app.get("/", function(req, res){
-    res.render("index");
+    res.render("dashboard");
+})
+app.get("/wallet", function(req, res){
+    res.render("wallet");
+})
+app.get("/dashboard", function(req, res){
+    res.render("dashboard");
 })
 
 app.get("/signup", function(req, res){
