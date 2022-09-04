@@ -12,7 +12,8 @@ let page;
 
 
 // const port = process.env.PORT || 5000;
-mongoose.connect("mongodb://localhost:27017/todolistDB",{useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost:27017/todolistDB",{useNewUrlParser: true});
+mongoose.connect("mongodb://process.env.PORT/todolistDB",{useNewUrlParser: true});
 
 const loginSchema = {
     firstName : String,
