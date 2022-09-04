@@ -3,7 +3,7 @@ const path = require ("path");
 const ejs = require("ejs");
 const app = express();
 const bodyparser = require('body-parser');
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const _ = require("lodash");
 const { off } = require("process");
 
@@ -153,6 +153,9 @@ app.get("/log", function(req, res){
 //     console.log(req.body.radio);
 //     let value = req.body.radio;
 // })
-app.listen(app.get("port"), function(){
-    console.log("server is running on prot "+ app.get("port"));
+// app.listen(app.get("port"), function(){
+//     console.log("server is running on prot "+ app.get("port"));
+// })
+app.listen(port, function(){
+    console.log("server is running on prot "+ port);
 })

@@ -63,3 +63,6 @@ button{
     display: flex;
     flex-direction: column;
 }
+.login:hover{
+    cursor: pointer;
+}
