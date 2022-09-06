@@ -157,7 +157,7 @@ app.post("/create-checkout-session", async (req, res)=>{
             ],
                
             success_url: res.send("SUCCESS"),
-            cancel_url: res.send("NOT SUCCESS");
+            cancel_url: res.send("NOT SUCCESS")
         })
         res.json({ url : session.url})
     }
