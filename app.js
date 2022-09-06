@@ -11,6 +11,7 @@ app.use(
     cors({
         origin: "https://rocket-fire.herokuapp.com/",
     })
+    
 )
 
 const PUBLISHABLE_KEY= "pk_test_51LeggnSJbyVt35s0oFhJ3W3xgLHJywEhOHmVO7ZiSQNFWcrSwCLef7cc920XjuPBagaUaopV5VW6UxIW0oo1ItXw001qfEiqq6";
