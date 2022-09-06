@@ -28,6 +28,9 @@
         <div class="right">
             <div class="rtop">
                 <div class="rtopl"><h1>Dashboard</h1></div>
+                <h1 class="buybutton">
+                    Buy
+                </h1>
                 <div class="rtopr">
                     <div class="searchtxt">Search</div>
                     <input type="search" name="search" id="">
@@ -108,4 +111,31 @@
         </div>
     </div>
 </body>
+<script>
+    const button = document.querySelector(".buybutton");
+    button.addEventListener("click",()=>{
+        fetch("/create-checkout-session",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                items: [
+                    { id:1, quantity: 1 },
+                    { id:2, quantity: 1 }
+                ]
+            })
+        }).then(res => {
+            if(res.ok) return res.json()
+            return res.json().then(json => Promise.reject(json))
+    })
+    .then(({ url }) => {
+        // console.log(url);
+        window.location = url
+    })
+    .catch(e =>{
+        console.error(e.error)
+    })
+})
+</script>
 </html>

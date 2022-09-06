@@ -3,10 +3,18 @@ const path = require ("path");
 const ejs = require("ejs");
 const app = express();
 const bodyparser = require('body-parser');
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const _ = require("lodash");
 const { off } = require("process");
 
+require("dotenv").config();
+
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
+
+const storeItems = new Map([
+    [1, { priceInCents: 10000, name: "Add a US business address"}],
+    [2, { priceInCents: 20000, name : "Manage your business"}],
+])
 
 
 const port = process.env.PORT || 5000;
@@ -118,18 +126,46 @@ app.post("/signup", function(req, res){
 })
 
 
+app.post("/create-checkout-session", async (req, res)=>{
+    try{
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types : ["card"],
+            mode : "payment",
+            line_items: [
+                {
+                  price_data: {
+                    currency: "usd",
+                    unit_amount: 500,
+                    product_data: {
+                      name: "name of the product",
+                    },
+                  },
+                  quantity: 1,
+                },
+            ],
+               
+            success_url: `${process.env.SERVER_URL}/company.ejs`,
+            cancel_url: `${process.env.SERVER_URL}/cancel.html`
+        })
+        res.json({ url : session.url})
+    }
+    catch(e){
+        res.status(500).json({ error : e.message})
+    }
+})
 
 
-app.post("/login",async function(req, res){
+app.post("/login", function(req, res){
     let email = req.body.email;
     let password = req.body.password;
-        // Id.find({}, function(err, foundItems){
+        // Id.find({}, async function(err, foundItems){
         //     for(var i=0; i<foundItems.length ; i++){
         //         // console.log(foundItems[i].email +" "+ foundItems[i].password+" /n");
         //         if((email === foundItems[i].email && foundItems[i].password === password) || (email === "admin@gmail.com" && password === "admin@1234")){
         //             console.log("founnd");
         //             page =  "/dashboard";
         //             console.log(page);
+        //             res.redirect("/dashboard");
         //             break;
         //         }
         //     }

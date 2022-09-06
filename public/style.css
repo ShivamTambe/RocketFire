@@ -66,3 +66,28 @@ button{
 .login:hover{
     cursor: pointer;
 }
+
+
+
+
+
+
+.buybutton{
+    display: flex;
+    justify-content: center;
+    margin: 130px 0;
+    margin: 130px auto;
+    width: 200px;
+    border: 2px solid red;
+    padding: 0.5em;
+    border: 1px solid #3e3e44;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    -webkit-transition: .2s;
+    transition: .2s;
+    color: #f1f1ff;
+}
+.buybutton:hover{
+    background-color: #07A3D7;
+    cursor: pointer;
+}
