@@ -6,6 +6,15 @@ const bodyparser = require('body-parser');
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const { off } = require("process");
+const cors = require("cors");
+app.use(
+    cors({
+        origin: "http://localhost:5500",
+    })
+)
+
+const PUBLISHABLE_KEY= "pk_test_51LeggnSJbyVt35s0oFhJ3W3xgLHJywEhOHmVO7ZiSQNFWcrSwCLef7cc920XjuPBagaUaopV5VW6UxIW0oo1ItXw001qfEiqq6";
+const SECRTE_KEY = "sk_test_51LeggnSJbyVt35s0x1LWDZoMX8lTiaB7WnL7zEkjE2jgf1YQ5LrDtHFK02GExO5bqzMoyK0xSWS0xRknfxsQ0vUI00eIEWMm8N";
 
 require("dotenv").config();
 
@@ -64,6 +73,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set("port", 5000);
 app.use(bodyparser.urlencoded({extended:false}))
+app.use(bodyparser.json());
 
 
 app.get("/", function(req, res){
@@ -89,7 +99,9 @@ app.get("/wallet", function(req, res){
     res.render("wallet");
 })
 app.get("/dashboard", function(req, res){
-    res.render("dashboard");
+    res.render("dashboard",{
+        key:PUBLISHABLE_KEY
+    });
 })
 app.get("/analytic", function(req, res){
     res.render("analytic");
@@ -144,8 +156,8 @@ app.post("/create-checkout-session", async (req, res)=>{
                 },
             ],
                
-            success_url: `${process.env.PORT}/company.ejs`,
-            cancel_url: `${process.env.PORT}/cancel.html`
+            success_url: `${process.env.SERVER_URL}/company.ejs`,
+            cancel_url: `${process.env.SERVER_URL}/cancel.html`
         })
         res.json({ url : session.url})
     }
@@ -185,6 +197,36 @@ app.get("/logout", function(req, res){
 app.get("/log", function(req, res){
     res.render("index");
 })
+
+
+app.post("/payment", function(req, res){
+    stripe.customers.create({
+        email:req.body.stripeemail,
+        source: req.body.stripeToken,
+        name: "Rocket fIre",
+        address:{
+            country:"USA"
+        }
+    })
+    .then((customer)=>{
+        return stripe.charges.create({
+            amount: 7000,
+            description: "WEb dEv Pro",
+            currency:'USD',
+            customer:customer.id
+        })
+        .then((charge)=>{
+            console.log(charge)
+            res.send("Success")
+        })
+        .catch((err)=>{
+            res.send(err)
+        })
+    })
+})
+
+
+
 // app.post("/next",function(req, res){
 //     console.log(req.body.radio);
 //     let value = req.body.radio;
