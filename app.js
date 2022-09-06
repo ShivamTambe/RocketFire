@@ -9,7 +9,7 @@ const { off } = require("process");
 
 require("dotenv").config();
 
-const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
+const stripe = require("stripe")("sk_test_51LeggnSJbyVt35s0x1LWDZoMX8lTiaB7WnL7zEkjE2jgf1YQ5LrDtHFK02GExO5bqzMoyK0xSWS0xRknfxsQ0vUI00eIEWMm8N");
 
 const storeItems = new Map([
     [1, { priceInCents: 10000, name: "Add a US business address"}],
