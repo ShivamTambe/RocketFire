@@ -126,7 +126,7 @@ app.post("/signup", function(req, res){
 })
 
 
-app.post("/create-checkout-session", async (req, res)=>{
+app.post("process.env.PORT/create-checkout-session", async (req, res)=>{
     try{
         const session = await stripe.checkout.sessions.create({
             payment_method_types : ["card"],
