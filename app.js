@@ -156,8 +156,8 @@ app.post("/create-checkout-session", async (req, res)=>{
                 },
             ],
                
-            success_url: `${process.env.SERVER_URL}/company.ejs`,
-            cancel_url: `${process.env.SERVER_URL}/cancel.html`
+            success_url: res.send("SUCCESS"),
+            cancel_url: res.send("NOT SUCCESS");
         })
         res.json({ url : session.url})
     }
@@ -165,6 +165,9 @@ app.post("/create-checkout-session", async (req, res)=>{
         res.status(500).json({ error : e.message})
     }
 })
+
+// success_url: `${process.env.SERVER_URL}/company.ejs`,
+//             cancel_url: `${process.env.SERVER_URL}/cancel.html`
 
 
 app.post("/login", function(req, res){
