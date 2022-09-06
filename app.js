@@ -9,9 +9,9 @@ const { off } = require("process");
 const cors = require("cors");
 app.use(
     cors({
-        origin: "https://rocket-fire.herokuapp.com/",
+        origin: "https://rocket-fire.herokuapp.com/http://localhost:5500",
     })
-    
+
 )
 
 const PUBLISHABLE_KEY= "pk_test_51LeggnSJbyVt35s0oFhJ3W3xgLHJywEhOHmVO7ZiSQNFWcrSwCLef7cc920XjuPBagaUaopV5VW6UxIW0oo1ItXw001qfEiqq6";
