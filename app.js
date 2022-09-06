@@ -9,7 +9,7 @@ const { off } = require("process");
 const cors = require("cors");
 app.use(
     cors({
-        origin: "http://localhost:5500",
+        origin: "https://rocket-fire.herokuapp.com/",
     })
 )
 
