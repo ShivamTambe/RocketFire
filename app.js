@@ -144,8 +144,8 @@ app.post("/create-checkout-session", async (req, res)=>{
                 },
             ],
                
-            success_url: `${process.env.SERVER_URL}/company.ejs`,
-            cancel_url: `${process.env.SERVER_URL}/cancel.html`
+            success_url: `${process.env.PORT}/company.ejs`,
+            cancel_url: `${process.env.PORT}/cancel.html`
         })
         res.json({ url : session.url})
     }
